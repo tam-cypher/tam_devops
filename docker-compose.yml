@@ -13,7 +13,6 @@ services:
     restart: unless-stopped
     environment:
       - EMQX_NAME=emqx
-      - EMQX_HOST=node1.emqx.local
       - EMQX_CLUSTER__DISCOVERY_STRATEGY=static
       - EMQX_CLUSTER__STATIC__SEEDS=[emqx@node1.emqx.local]
       - EMQX_LOADED_PLUGINS="emqx_recon,emqx_retainer,emqx_management,emqx_dashboard"
@@ -34,11 +33,11 @@ services:
       interval: 5s
       timeout: 25s
       retries: 5
-    logging:
-      driver: loki
-      options:
-        loki-url: http://localhost:3100/loki/api/v1/push
-    network_mode: host
+    # logging:
+    #   driver: loki
+    #   options:
+    #     loki-url: http://localhost:3100/loki/api/v1/push
+    # network_mode: host
   pgadmin:
     logging:
       driver: loki
@@ -54,7 +53,7 @@ services:
       - 8000:80
     volumes:
       - pgadmin:/var/lib/pgadmin
-    network_mode: host
+    # network_mode: host
   portainer:
     # ee for prod, ce for anything else
     image: portainer/portainer-ce:2.30.1
@@ -67,11 +66,11 @@ services:
       - portainer-data:/data
       - ./creds/admin_password:/tmp/admin_password
       - /var/run/docker.sock:/var/run/docker.sock
-    logging:
-      driver: loki
-      options:
-        loki-url: http://localhost:3100/loki/api/v1/push
-    network_mode: host
+    # logging:
+    #   driver: loki
+    #   options:
+    #     loki-url: http://localhost:3100/loki/api/v1/push
+    # network_mode: host
   grafana:
     image: grafana/grafana:12.0.0
     privileged: false
@@ -82,7 +81,7 @@ services:
         GF_INSTALL_PLUGINS: "ayoungprogrammer-finance-datasource,grafana-simple-json-datasource"
     volumes:
       - grafana-data:/var/lib/grafana
-    network_mode: host
+  #  network_mode: host
   # loki:
   #   container_name: loki
   #   image: grafana/loki:3.4.1
