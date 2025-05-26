@@ -1,0 +1,93 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            zoom: 1;
+            font-family: sans-serif;
+        }
+        body {
+            background: #ddd;
+        }
+        menu {
+            max-width: 1000px;
+            margin:0 auto;
+        }
+        menu ul {
+            width:100%;
+            height:100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: space-around;
+            list-style-type: none;
+        }
+        menu li {
+            display:block;
+        }
+        menu a {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: space-around;
+            flex-direction: column;
+            text-decoration: none;
+            color: #333;
+            margin: 10px;
+            height: 150px;
+            width: 120px;
+            background: #fff;
+            padding:10px;
+        }
+        menu a:hover{
+            background: #eee;
+        }
+        .img {
+            display:block;
+            width:100%;
+            font-size:0;
+            line-height:0;
+            height:0;
+            padding-top:90%;
+            background-repeat:no-repeat;
+            background-color:transparent;
+            background-size:contain;
+            background-position: center center;
+        }
+        .lib {
+            display:block;
+            text-align:center;
+            font-weight:bold;
+        }
+    </style>
+    <title>Admin tools</title>
+</head>
+<body>
+<menu>
+    <ul>
+        <li>
+            <a href="/portainer">
+                <span class="img" style="background-image:url('https://avatars.githubusercontent.com/u/22225832?s=200&v=4')">Portainer</span>
+                <span class="lib">Portainer</span>
+            </a>
+            <a href="/hummingbot">
+                <span class="img" style="background-image:url('https://avatars.githubusercontent.com/u/177543?s=200&v=4')">Hummingbot</span>
+                <span class="lib">Hummingbot</span>
+            </a>
+            <a href="/grafana">
+                <span class="img" style="background-image:url('https://avatars.githubusercontent.com/u/7195757?s=200&v=4')">Grafana</span>
+                <span class="lib">Grafana</span>
+            </a>
+            <a href="/pgadmin">
+                <span class="img" style="background-image:url('https://avatars.githubusercontent.com/u/7195757?s=200&v=4')">PG Admin</span>
+                <span class="lib">PG Admin</span>
+            </a>
+        </li>
+    </ul>
+</menu>
+</body>
+</html>
