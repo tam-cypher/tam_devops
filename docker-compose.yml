@@ -39,10 +39,10 @@ services:
     #     loki-url: http://localhost:3100/loki/api/v1/push
     # network_mode: host
   pgadmin:
-    logging:
-      driver: loki
-      options:
-        loki-url: http://localhost:3100/loki/api/v1/push
+    # logging:
+    #   driver: loki
+    #   options:
+    #     loki-url: http://localhost:3100/loki/api/v1/push
     image: dpage/pgadmin4:9.3.0
     environment:
       PGADMIN_DEFAULT_EMAIL: "admin@cyphercapital.com"
