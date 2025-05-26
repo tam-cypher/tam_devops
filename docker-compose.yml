@@ -88,8 +88,14 @@ services:
     container_name: filebrowser
     volumes:
       - /home/ubuntu/deploy/bots:/srv #Change to match your directory
-      - ./filebrowser/filebrowser.db:/database/filebrowser.db #Change to match your directory
-      - ./filebrowser/settings.json:/config/settings.json #Change to match your directory
+      - type: bind
+        source: ./filebrowser/settings.json
+        target: /config/settings.json
+      - type: bind
+        source: ./filebrowser/filebrowser.db
+        target: /database/filebrowser.db
+      #- ./filebrowser/filebrowser.db:/database/filebrowser.db #Change to match your directory
+      #- ./filebrowser/settings.json:/config/settings.json #Change to match your directory
     environment:
       - PUID=$(id -u)
       - PGID=$(id -g)
